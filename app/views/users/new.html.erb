@@ -1,0 +1,23 @@
+<h1>Welcome New User please create an account below</h1>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit "Create Account!" %>
+  </p>
+<% end %>

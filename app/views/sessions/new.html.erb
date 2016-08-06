@@ -1,0 +1,18 @@
+<h1>Please sign in below if you are an existing user</h1>
+<p>
+  If you are not please click <%= link_to "here", new_user_path %> to make a new account!
+</p>
+
+<%= form_for @user, url: sessions_path do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <%= f.submit "Log in!" %>
+
+  <% end %>
