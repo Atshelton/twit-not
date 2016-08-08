@@ -1,0 +1,13 @@
+<h1>Welcome: <%= "#{@user.name}" %></h1>
+<h3>These are your current twits:</h3><br>
+
+<p>
+  Add new Twit? Do so, <%= link_to "Here.", new_twit_path %>
+</p>
+<p>
+  To see all Twits <%= link_to "Click Here", twits_path %>
+</p>
+
+<p>
+  Tired of this waste of time? logout on the homepage <%= link_to "Here", root_path %>
+</p>
