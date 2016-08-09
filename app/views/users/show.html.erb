@@ -1,6 +1,11 @@
 <h1>Welcome: <%= "#{@user.name}" %></h1>
 <h3>These are your current twits:</h3><br>
 
+<% @twits.each do |twit| %>
+<p>
+  <%= twit.body %>
+</p>
+<% end %><br>
 <p>
   Add new Twit? Do so, <%= link_to "Here.", new_twit_path %>
 </p>

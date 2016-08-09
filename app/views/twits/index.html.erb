@@ -1,6 +1,10 @@
 <h1>The Twits that have been uploaded to our database thus far:</h1>
 
-
+<% @twits.each do |twit| %>
+<p>
+  <%= twit.body %>
+</p>
+<% end %>
 
 
 
@@ -12,5 +16,5 @@
 
 
 <p>
-  Back to your page? <%= link_to "Personal Page", "/users/#{@user.id}" %>
+  Back to your page? <%= link_to "Personal Page", user_path(current_user) %>
 </p>

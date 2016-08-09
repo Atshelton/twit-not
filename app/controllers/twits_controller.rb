@@ -5,7 +5,7 @@ class TwitsController < ApplicationController
 
   def index
     @twits = Twit.all
-    @twit = Twit.find_by params[:user_id]
+    @twit = Twit.where params[:user_id]
   end
 
   def show
@@ -13,10 +13,17 @@ class TwitsController < ApplicationController
   end
 
   def create
-    redirect_to twits_path
+    @twit = Twit.new(twit_params)
+    if @twit.save
+      @twit.update(user_id: current_user.id)
+      redirect_to twits_path
+    else
+      render :new
+    end
   end
 
-  private def set_twit
-    @twit = Twit.find(params[:id])
+  private def twit_params
+    params.require("twit").permit(:body)
+
   end
 end
